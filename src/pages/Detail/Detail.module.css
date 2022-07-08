@@ -1,0 +1,14 @@
+.container {
+  text-align: left;
+}
+
+.boxMessage {
+  border: 1px solid #000;
+  padding: 2vw;
+  margin: 0 2vw;
+}
+
+.submitBtn {
+  margin-left: 2vw;
+  color: rgb(165, 41, 80);
+}
