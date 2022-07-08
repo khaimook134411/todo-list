@@ -1,13 +1,16 @@
 import React from "react";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import Detail from "./pages/Detail";
+import Landing from "./pages/Landing";
 
 function App() {
   return (
     <div className="App">
-      <h1>Todo List</h1>
-      <h1>Todo Listggg</h1>
-      <h1>Todo Listddd</h1>
-      first commit
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/detail" element={<Detail />} />
+      </Routes>
     </div>
   );
 }
