@@ -18,7 +18,9 @@ function Landing() {
           <div className={style.showItem}>
             <div className={style.item}>{item}</div>
             <div className={style.actionBtn}>
-              <div className={style.edit}>edit</div>
+              <Link to={`/detail/#${index}`}>
+                <div className={style.edit}>edit</div>
+              </Link>
               <div
                 className={style.delete}
                 onClick={() => {

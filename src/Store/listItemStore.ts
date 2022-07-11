@@ -26,12 +26,7 @@ export const listItemStore = createSlice({
         }),
       };
     },
-    // edit: (state) => {
-    //   return { ...state, item: (state.item = 0) };
-    // },
   },
 });
 
 export const { add, del } = listItemStore.actions;
-// export const add = listItemStore.actions.add;
-// export const delete = listItemStore.actions.delete;
