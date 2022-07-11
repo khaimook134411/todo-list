@@ -1,3 +1,29 @@
 .container {
-  background-color: antiquewhite;
+  text-align: left;
+  padding: 2vw;
+}
+
+.showItem {
+  display: flex;
+  border: 1px solid #000;
+  padding: 2vw;
+  margin: 0vw 2vw;
+  gap: 50vw;
+}
+
+.item {
+  width: 20vw;
+}
+
+.actionBtn {
+  display: flex;
+  gap: 5vw;
+}
+
+.edit {
+  color: rgb(17, 149, 211);
+}
+
+.delete {
+  color: rgb(213, 68, 68);
 }
