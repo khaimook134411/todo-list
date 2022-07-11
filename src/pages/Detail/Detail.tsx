@@ -5,20 +5,28 @@ import { add } from "../../Store/listItemStore";
 import { store } from "../../Store/store";
 
 function Detail() {
+  console.log(window.location.href);
+
   return (
     <div>
       <Link to="/">back</Link>
 
-      <ListItem
-        title="Add Todo"
-        boxMessage="add new"
-        action={(input: string) => {
-          store.dispatch(add({ item: input }));
-        }}
-        btn="submit"
-      />
-
-      <ListItem title="Edit Todo" boxMessage="edit message" btn="save" />
+      {window.location.hash ? (
+        <ListItem
+          title={`Edit Todo ${window.location.hash}`}
+          boxMessage="edit message"
+          btn="save"
+        />
+      ) : (
+        <ListItem
+          title="Add Todo"
+          boxMessage="add new"
+          action={(input: string) => {
+            store.dispatch(add({ item: input }));
+          }}
+          btn="submit"
+        />
+      )}
     </div>
   );
 }
