@@ -33,7 +33,7 @@ export const listItemStore = createSlice({
       return {
         ...state,
         items: state.items.map((item, index) => {
-          if (action.payload.editIndex == index) {
+          if (action.payload.editIndex === index) {
             return action.payload.editItem;
           } else {
             return item;
