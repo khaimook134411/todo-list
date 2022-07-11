@@ -12,7 +12,6 @@ export const listItemStore = createSlice({
   initialState: initialState,
   reducers: {
     add: (state, action: PayloadAction<{ item: string }>) => {
-      console.log(state.items);
       return {
         ...state,
         items: [...state.items, action.payload.item],
@@ -26,7 +25,23 @@ export const listItemStore = createSlice({
         }),
       };
     },
+    edit: (
+      state,
+      action: PayloadAction<{ editIndex: number; editItem: string }>
+    ) => {
+      console.log(action.payload.editIndex);
+      return {
+        ...state,
+        items: state.items.map((item, index) => {
+          if (action.payload.editIndex == index) {
+            return action.payload.editItem;
+          } else {
+            return item;
+          }
+        }),
+      };
+    },
   },
 });
 
-export const { add, del } = listItemStore.actions;
+export const { add, del, edit } = listItemStore.actions;

@@ -3,7 +3,7 @@ import style from "./ListItem.module.css";
 import { Link } from "react-router-dom";
 
 function ListItem(props: any) {
-  const [inputData, setInputData] = useState("");
+  const [inputData, setInputData] = useState(props.value);
   return (
     <div className={style.container}>
       <h1>{props.title}</h1>
