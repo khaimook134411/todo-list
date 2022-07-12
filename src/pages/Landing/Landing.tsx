@@ -18,7 +18,7 @@ function Landing() {
           <div className={style.showItem}>
             <div className={style.item}>{item}</div>
             <div className={style.actionBtn}>
-              <Link to={`/detail/#${index}`}>
+              <Link to={`/detail/#${index + 1}`}>
                 <div className={style.edit}>edit</div>
               </Link>
               <div
