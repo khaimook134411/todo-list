@@ -4,11 +4,9 @@ import { Link } from "react-router-dom";
 import { del } from "../../Store/listItemStore";
 import { rootType } from "../../Store/rootReducer";
 import { store } from "../../Store/store";
-// import reduxStore from "../../Store/store";
 import style from "./Landing.module.css";
 
 function Landing() {
-  // const { store } = reduxStore();
   const state = useSelector((state: rootType) => {
     return state.items;
   });
