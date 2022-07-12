@@ -19,11 +19,13 @@ function Detail() {
         <ListItem
           title={`Edit Todo ${window.location.hash}`}
           boxMessage="edit message"
-          value={state.items[parseInt(window.location.hash.replace("#", ""))]}
+          value={
+            state.items[parseInt(window.location.hash.replace("#", "")) - 1]
+          }
           action={(input: string) => {
             store.dispatch(
               edit({
-                editIndex: parseInt(window.location.hash.replace("#", "")),
+                editIndex: parseInt(window.location.hash.replace("#", "")) - 1,
                 editItem: input,
               })
             );
