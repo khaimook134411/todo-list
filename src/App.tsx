@@ -1,19 +1,24 @@
 import React from "react";
 import { Provider } from "react-redux";
 import { Route, Routes } from "react-router-dom";
+import { PersistGate } from "redux-persist/integration/react";
 import "./App.css";
 import Detail from "./pages/Detail/Detail";
 import Landing from "./pages/Landing/Landing";
-import { store } from "./Store/store";
+import { store, persistedStore } from "./Store/store";
+// import reduxStore from "./Store/store";
 
 function App() {
+  // const { store, persistor } = reduxStore();
   return (
     <div className="App">
       <Provider store={store}>
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/detail" element={<Detail />} />
-        </Routes>
+        <PersistGate loading={null} persistor={persistedStore}>
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/detail" element={<Detail />} />
+          </Routes>
+        </PersistGate>
       </Provider>
     </div>
   );

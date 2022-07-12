@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import ListItem from "../../components/ListItem";
 import { add, edit } from "../../Store/listItemStore";
 import { store } from "../../Store/store";
+// import reduxStore from "../../Store/store";
 import { rootType } from "../../Store/rootReducer";
 import { useSelector } from "react-redux";
 
 function Detail() {
+  // const { store } = reduxStore();
   const state = useSelector((state: rootType) => {
     return state.items;
   });
