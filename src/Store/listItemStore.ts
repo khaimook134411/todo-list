@@ -29,7 +29,6 @@ export const listItemStore = createSlice({
       state,
       action: PayloadAction<{ editIndex: number; editItem: string }>
     ) => {
-      console.log(action.payload.editIndex);
       return {
         ...state,
         items: state.items.map((item, index) => {

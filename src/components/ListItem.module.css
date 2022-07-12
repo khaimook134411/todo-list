@@ -1,6 +1,11 @@
 .container {
   text-align: left;
   padding: 2vw;
+  text-decoration: none;
+}
+
+.container a {
+  text-decoration: none;
 }
 
 .boxMessage {

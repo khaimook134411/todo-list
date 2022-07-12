@@ -34,7 +34,9 @@ function Landing() {
         );
       })}
 
-      <Link to="/detail">Add new</Link>
+      <Link to="/detail" className={style.submitBtn}>
+        Add new
+      </Link>
     </div>
   );
 }
