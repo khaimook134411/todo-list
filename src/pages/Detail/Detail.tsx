@@ -17,7 +17,9 @@ function Detail() {
 
       {window.location.hash ? (
         <ListItem
-          title={`Edit Todo ${window.location.hash}`}
+          title={`Edit Todo ${
+            parseInt(window.location.hash.replace("#", "")) + 1
+          }`}
           boxMessage="edit message"
           value={state.items[parseInt(window.location.hash.replace("#", ""))]}
           action={(input: string) => {
