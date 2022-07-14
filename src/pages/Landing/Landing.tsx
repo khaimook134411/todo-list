@@ -7,9 +7,14 @@ import { store } from "../../Store/store";
 import style from "./Landing.module.css";
 
 function Landing() {
+  //observe reducer
   const state = useSelector((state: rootType) => {
     return state.items;
   });
+  //call action delete from store
+  const _delete = (index: number) => {
+    store.dispatch(del({ index: index }));
+  };
   return (
     <div className={style.container}>
       <h1>My Todo List</h1>
@@ -21,12 +26,7 @@ function Landing() {
               <Link to={`/detail/#${index + 1}`}>
                 <div className={style.edit}>edit</div>
               </Link>
-              <div
-                className={style.delete}
-                onClick={() => {
-                  store.dispatch(del({ index: index }));
-                }}
-              >
+              <div className={style.delete} onClick={() => _delete(index)}>
                 delete
               </div>
             </div>

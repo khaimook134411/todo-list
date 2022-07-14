@@ -6,10 +6,8 @@ import "./App.css";
 import Detail from "./pages/Detail/Detail";
 import Landing from "./pages/Landing/Landing";
 import { store, persistedStore } from "./Store/store";
-// import reduxStore from "./Store/store";
 
 function App() {
-  // const { store, persistor } = reduxStore();
   return (
     <div className="App">
       <Provider store={store}>

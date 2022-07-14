@@ -7,9 +7,29 @@ import { rootType } from "../../Store/rootReducer";
 import { useSelector } from "react-redux";
 
 function Detail() {
+  //observe reducer
   const state = useSelector((state: rootType) => {
     return state.items;
   });
+
+  // call action add from store
+  const _add = (input: string) => {
+    store.dispatch(add({ item: input }));
+  };
+
+  //call action edit from store
+  const _edit = (inputData: string) => {
+    store.dispatch(
+      edit({
+        editIndex: parseInt(window.location.hash.replace("#", "")) - 1,
+        editItem: inputData,
+      })
+    );
+  };
+
+  //call value from store
+  const value =
+    state.items[parseInt(window.location.hash.replace("#", "")) - 1];
 
   return (
     <div>
@@ -19,17 +39,8 @@ function Detail() {
         <ListItem
           title={`Edit Todo ${window.location.hash}`}
           boxMessage="edit message"
-          value={
-            state.items[parseInt(window.location.hash.replace("#", "")) - 1]
-          }
-          action={(input: string) => {
-            store.dispatch(
-              edit({
-                editIndex: parseInt(window.location.hash.replace("#", "")) - 1,
-                editItem: input,
-              })
-            );
-          }}
+          value={value}
+          action={_edit}
           btn="save"
         />
       ) : (
@@ -37,9 +48,7 @@ function Detail() {
           title="Add Todo"
           boxMessage="add new"
           value=""
-          action={(input: string) => {
-            store.dispatch(add({ item: input }));
-          }}
+          action={_add}
           btn="submit"
         />
       )}
