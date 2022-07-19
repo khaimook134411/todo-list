@@ -3,14 +3,10 @@ import { Link } from "react-router-dom";
 import ListItem from "../../components/ListItem";
 import { add, edit } from "../../Store/listItemStore";
 import { store } from "../../Store/store";
-import { rootType } from "../../Store/rootReducer";
-import { useSelector } from "react-redux";
 
 function Detail() {
-  //observe reducer
-  const state = useSelector((state: rootType) => {
-    return state.items;
-  });
+  //get state from store
+  const state = store.getState().items;
 
   // call action add from store
   const _add = (input: string) => {
@@ -27,7 +23,7 @@ function Detail() {
     );
   };
 
-  //call value from store
+  //request value from store
   const value =
     state.items[parseInt(window.location.hash.replace("#", "")) - 1];
 
